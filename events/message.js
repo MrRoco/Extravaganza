@@ -10,8 +10,8 @@ module.exports = (client, message) => {
         let adminRole = message.guild.roles.find("name", "Casters");
         //let modRole = message.guild.roles.find("name", "Staff");
 
-        if(message.member.roles.has(adminRole)){
-            return message.reply('test')
+        if(message.member.roles.has(adminRole.id)){
+            return message.reply('Test')
         } else {
             return message.reply('You wish')
         }
