@@ -5,16 +5,15 @@ module.exports = (client, message) => {
         return message.reply('pong')
     }
 
-
     if (message.content === '!commands') {
         let adminRole = message.guild.roles.find("name", "Casters");
         //let modRole = message.guild.roles.find("name", "Staff");
 
         if(message.member.roles.has(adminRole.id)){
             return message.reply('Test')
-        } else {
-            return message.reply('You wish')
         }
+
+        return message.reply('You wish!')
     }
 
 
