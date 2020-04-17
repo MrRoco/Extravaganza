@@ -5,6 +5,19 @@ module.exports = (client, message) => {
         return message.reply('pong')
     }
 
+
+    if (message.content === '!commands') {
+        let adminRole = message.guild.roles.find("name", "Casters");
+        //let modRole = message.guild.roles.find("name", "Staff");
+
+        if(message.member.roles.has(adminRole)){
+            return message.reply('test')
+        } else {
+            return message.reply('You wish')
+        }
+    }
+
+
     if (message.content === '!tournament' || message.content === '!rules' || message.content === '!1v1'){
         return message.reply(process.env.RULES)
     }
