@@ -6,14 +6,14 @@ module.exports = (client, message) => {
     }
 
     if (message.content === '!commands') {
-        let adminRole = message.guild.roles.find("name", "Casters");
-        //let modRole = message.guild.roles.find("name", "Staff");
-
-        if(message.member.roles.has(adminRole.id)){
-            return message.reply('Test')
+        if(message.member.hasPermission('KICK_MEMBERS')){
+            return message.reply('!kick @user -> Kicks user froms discord.\n' +
+                                 '!ruffle -> will randomly select a ship class & map.\n' +
+                                 '!1v1, !rules, !tournament -> will send the tournament information')
         }
 
-        return message.reply('You wish!')
+        return message.reply('!ruffle -> will randomly select a ship class & map.\n' +
+                             '!1v1, !rules, !tournament -> will send the tournament information')
     }
 
 
