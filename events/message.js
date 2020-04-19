@@ -6,23 +6,12 @@ module.exports = (client, message) => {
     }
 
     if (message.content === '!commands') {
-        if(message.member.hasPermission('KICK_MEMBERS')){
-            return message.reply('\n!kick @user -> Kicks user froms discord.\n' +
-                                 '!ruffle -> will randomly select a ship class & map.\n' +
-                                 '!1v1, !rules, !tournament -> will send the tournament information')
-        }
-
         return message.reply('\n!ruffle -> will randomly select a ship class & map.\n' +
                              '!1v1, !rules, !tournament -> will send the tournament information')
     }
 
-
     if (message.content === '!tournament' || message.content === '!rules' || message.content === '!1v1'){
         return message.reply(process.env.RULES).then(() => message.reply(process.env.RULES2))
-    }
-
-    if (message.content.startsWith("!kick") && message.member.hasPermission('KICK_MEMBERS')) {
-        return kick(message)
     }
 
     if (message.content.startsWith("!ruffle")) {
