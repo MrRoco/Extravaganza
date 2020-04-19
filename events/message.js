@@ -18,7 +18,7 @@ module.exports = (client, message) => {
 
 
     if (message.content === '!tournament' || message.content === '!rules' || message.content === '!1v1'){
-        return message.reply(process.env.RULES)
+        return message.reply(process.env.RULES).then(() => message.reply(process.env.RULES2))
     }
 
     if (message.content.startsWith("!kick") && message.member.hasPermission('KICK_MEMBERS')) {
