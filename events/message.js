@@ -28,7 +28,7 @@ module.exports = (client, message) => {
     }
 
     if (message.content === '!list') {
-        const roleID = "679038333308895416";
+        const roleID = "701881535757942814";
         const membersWithRole = message.guild.roles.cache.get(roleID).members
         const memberSize = membersWithRole.size;
         const players = membersWithRole.map(member => {
