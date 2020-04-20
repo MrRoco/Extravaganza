@@ -6,19 +6,19 @@ module.exports = (client, message) => {
     }
 
     if (message.content === '!commands') {
-        return message.reply(process.env.COMMANDS)
+        return message.reply('\n' + process.env.COMMANDS)
     }
 
     if (message.content === '!tournament' || message.content === '!rules' || message.content === '!1v1'){
-        return message.reply(process.env.RULES).then(() => message.reply(process.env.RULES2))
+        return message.reply('\n' +process.env.RULES).then(() => message.reply('\n' +process.env.RULES2))
     }
 
     if (message.content === '!promo') {
-        return message.reply(process.env.PROMO)
+        return message.reply('\n' +process.env.PROMO)
     }
 
     if (message.content === '!casters' || message.content === '!twitch' || message.content === '!stream') {
-        return message.reply(process.env.CASTERS)
+        return message.reply('\n' +process.env.CASTERS)
     }
 
     if (message.content.startsWith("!ruffle")) {
@@ -28,7 +28,7 @@ module.exports = (client, message) => {
         const map   = maps[Math.floor(Math.random() * maps.length)];
 
         return message.reply(
-            `The next round will be played with ${type} on the next map: ${map}`
+            '\n' + `The next round will be played with ${type} on the next map: ${map}`
         )
     }
 }
