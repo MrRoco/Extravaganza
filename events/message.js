@@ -23,6 +23,10 @@ module.exports = (client, message) => {
         return message.reply('\n' +process.env.CASTERS)
     }
 
+    if (message.content === '!leaderboard') {
+        return message.reply('\n https://challonge.com/1v1EVII')
+    }
+
     if (message.content === '!list') {
         const roleID = "679038333308895416";
         const membersWithRole = message.guild.roles.cache.get(roleID).members
