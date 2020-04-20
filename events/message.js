@@ -6,12 +6,19 @@ module.exports = (client, message) => {
     }
 
     if (message.content === '!commands') {
-        return message.reply('\n!ruffle -> will randomly select a ship class & map.\n' +
-                             '!1v1, !rules, !tournament -> will send the tournament information')
+        return message.reply('process.env.COMMANDS)
     }
 
     if (message.content === '!tournament' || message.content === '!rules' || message.content === '!1v1'){
         return message.reply(process.env.RULES).then(() => message.reply(process.env.RULES2))
+    }
+
+    if (message.content === '!promo') {
+        return message.reply(process.env.PROMO)
+    }
+
+    if (message.content === '!casters' || message.content === '!twitch' || message.content === '!stream') {
+        return message.reply(process.env.CASTERS)
     }
 
     if (message.content.startsWith("!ruffle")) {
