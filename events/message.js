@@ -3,11 +3,11 @@ const Discord = require("discord.js")
 const alphaSort = require('alpha-sort');
  kick = require("../commands/kick")
 module.exports = (client, message) => {
-    if (message.content === 'ping') {
+    if (message.content.startsWith("ping")) {
         return message.reply('pong')
     }
 
-    if (message.content === 'pong') {
+    if (message.content.startsWith("pong")) {
         return message.reply('ping')
     }
 
@@ -31,7 +31,7 @@ module.exports = (client, message) => {
         return message.reply('\n https://challonge.com/1v1EVII')
     }
 
-    if (message.content === '!list') {
+    if (message.content) {
         const roleID = "701881535757942814";
         const membersWithRole = message.guild.roles.cache.get(roleID).members
         const memberSize = membersWithRole.size;
