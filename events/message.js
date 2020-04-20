@@ -31,7 +31,7 @@ module.exports = (client, message) => {
         return message.reply('\n https://challonge.com/1v1EVII')
     }
 
-    if (message.content) {
+    if (message.content === '!list') {
         const roleID = "701881535757942814";
         const membersWithRole = message.guild.roles.cache.get(roleID).members
         const memberSize = membersWithRole.size;
