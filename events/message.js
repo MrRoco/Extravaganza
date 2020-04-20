@@ -7,6 +7,10 @@ module.exports = (client, message) => {
         return message.reply('pong')
     }
 
+    if (message.content === 'pong') {
+        return message.reply('ping')
+    }
+
     if (message.content === '!commands') {
         return message.reply('\n' + process.env.COMMANDS)
     }
