@@ -1,5 +1,7 @@
 require("dotenv").config()
-const kick = require("../commands/kick")
+const Discord = require("discord.js")
+const alphaSort = require('alpha-sort');
+ kick = require("../commands/kick")
 module.exports = (client, message) => {
     if (message.content === 'ping') {
         return message.reply('pong')
@@ -19,6 +21,24 @@ module.exports = (client, message) => {
 
     if (message.content === '!casters' || message.content === '!twitch' || message.content === '!stream') {
         return message.reply('\n' +process.env.CASTERS)
+    }
+
+    if (message.content === '!list') {
+        const roleID = "679038333308895416";
+        const membersWithRole = message.guild.roles.cache.get(roleID).members
+        const memberSize = membersWithRole.size;
+        const players = membersWithRole.map(member => {
+            return member.user.username;
+        }).sort((a, b) => a.localeCompare(b, undefined, {sensitivity: 'base'}));
+
+        // inside a command, event listener, etc.
+        const embed = new Discord.MessageEmbed()
+            .setColor('#0xFFFF')
+            .setTitle('Players total: ' + memberSize)
+            .setDescription(players.join("\n"))
+            .setTimestamp();
+
+        return message.channel.send({embed});
     }
 
     if (message.content.startsWith("!ruffle")) {
