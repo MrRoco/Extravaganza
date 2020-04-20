@@ -6,7 +6,7 @@ module.exports = (client, message) => {
     }
 
     if (message.content === '!commands') {
-        return message.reply('process.env.COMMANDS)
+        return message.reply(process.env.COMMANDS)
     }
 
     if (message.content === '!tournament' || message.content === '!rules' || message.content === '!1v1'){
