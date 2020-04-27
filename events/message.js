@@ -16,7 +16,7 @@ module.exports = (client, message) => {
     }
 
     if (message.content === '!faq') {
-        return message.reply('\n' + process.env.FAQ)
+        return message.reply('\n' + process.env.FAQ).then(() => message.reply('\n' +process.env.FAQ2))
     }
 
     if (message.content === '!tournament' || message.content === '!rules' || message.content === '!1v1'){
