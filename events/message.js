@@ -53,6 +53,96 @@ module.exports = (client, message) => {
         return message.channel.send({embed});
     }
 
+    if (message.content === '!list') {
+        const roleID = "701881535757942814";
+        const membersWithRole = message.guild.roles.cache.get(roleID).members
+        const memberSize = membersWithRole.size;
+        const players = membersWithRole.map(member => {
+            return member.user.username;
+        }).sort((a, b) => a.localeCompare(b, undefined, {sensitivity: 'base'}));
+
+        // inside a command, event listener, etc.
+        const embed = new Discord.MessageEmbed()
+            .setColor('#0xFFFF')
+            .setTitle('Players total: ' + memberSize)
+            .setDescription(players.join("\n"))
+            .setTimestamp();
+
+        return message.channel.send({embed});
+    }
+
+    if (message.content === '!group1') {
+        const roleID = "704757160042561536";
+        const membersWithRole = message.guild.roles.cache.get(roleID).members
+        const memberSize = membersWithRole.size;
+        const players = membersWithRole.map(member => {
+            return member.user.username;
+        }).sort((a, b) => a.localeCompare(b, undefined, {sensitivity: 'base'}));
+
+        // inside a command, event listener, etc.
+        const embed = new Discord.MessageEmbed()
+            .setColor('#0xFFFF')
+            .setTitle('Players total: ' + memberSize)
+            .setDescription(players.join("\n"))
+            .setTimestamp();
+
+        return message.channel.send({embed});
+    }
+
+    if (message.content === '!group2') {
+        const roleID = "704757529241976908";
+        const membersWithRole = message.guild.roles.cache.get(roleID).members
+        const memberSize = membersWithRole.size;
+        const players = membersWithRole.map(member => {
+            return member.user.username;
+        }).sort((a, b) => a.localeCompare(b, undefined, {sensitivity: 'base'}));
+
+        // inside a command, event listener, etc.
+        const embed = new Discord.MessageEmbed()
+            .setColor('#0xFFFF')
+            .setTitle('Players total: ' + memberSize)
+            .setDescription(players.join("\n"))
+            .setTimestamp();
+
+        return message.channel.send({embed});
+    }
+
+    if (message.content === '!group3') {
+        const roleID = "704757561328402432";
+        const membersWithRole = message.guild.roles.cache.get(roleID).members
+        const memberSize = membersWithRole.size;
+        const players = membersWithRole.map(member => {
+            return member.user.username;
+        }).sort((a, b) => a.localeCompare(b, undefined, {sensitivity: 'base'}));
+
+        // inside a command, event listener, etc.
+        const embed = new Discord.MessageEmbed()
+            .setColor('#0xFFFF')
+            .setTitle('Players total: ' + memberSize)
+            .setDescription(players.join("\n"))
+            .setTimestamp();
+
+        return message.channel.send({embed});
+    }
+
+    if (message.content === '!group4') {
+        const roleID = "704757584472703126";
+        const membersWithRole = message.guild.roles.cache.get(roleID).members
+        const memberSize = membersWithRole.size;
+        const players = membersWithRole.map(member => {
+            return member.user.username;
+        }).sort((a, b) => a.localeCompare(b, undefined, {sensitivity: 'base'}));
+
+        // inside a command, event listener, etc.
+        const embed = new Discord.MessageEmbed()
+            .setColor('#0xFFFF')
+            .setTitle('Players total: ' + memberSize)
+            .setDescription(players.join("\n"))
+            .setTimestamp();
+
+        return message.channel.send({embed});
+    }
+
     if (message.content.startsWith("!ruffle")) {
         const types = process.env.CLASSES.split(',')
         const maps  = process.env.MAPS.split(',')
