@@ -178,6 +178,27 @@ module.exports = (client, message) => {
         return channel.send(`${role}: ${message.author.username} has blocked tier: ${args[0]}`);
     }
 
+
+    if (command === 'class') {
+        if(!message.member.roles.cache.some(r=>["Staff", "Group-1", "Group-2", "Group-3", "Group-4"].includes(r.name)) ) {
+            return;
+        }
+
+        const channel = message.guild.channels.cache.get('705038712417026108');
+        //const channel = client.channels.fetch(705038712417026108) as Discord.TextChannel;
+        var role = 'Group-1';
+        if(message.member.roles.cache.has('704757529241976908')) {
+            role = 'Group-2';
+        } else if (message.member.roles.cache.has('704757561328402432')) {
+            role = 'Group-3';
+        } else if (message.member.roles.cache.has('704757584472703126')) {
+            role = 'Group-4';
+        }
+
+        return channel.send(`${role}: ${message.author.username} has chosen class: ${args[0]}`);
+    }
+
+
     if (command === 'win') {
         if(!message.member.roles.cache.some(r=>["Staff", "Group-1", "Group-2", "Group-3", "Group-4"].includes(r.name)) ) {
             return;
