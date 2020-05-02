@@ -3,6 +3,6 @@ module.exports = (client, member) => {
         `Welcome to the Extravaganza 1v1 tournament, type !commands for the commands needed to participate. Good Luck & Have Fun 😀`
     )
 
-    var role= member.guild.roles.cache.find(role => role.name === "Participant");
+    var role= member.guild.roles.cache.find(role => role.name === "Viewer");
     member.roles.add(role);
 }
