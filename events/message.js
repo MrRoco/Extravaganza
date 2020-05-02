@@ -215,6 +215,6 @@ module.exports = (client, message) => {
             role = 'Group-4';
         }
 
-        return channel.send(`${role}: ${message.author.username} has won`);
+        return channel.send(`${role}: ${message.author.username} has won with the following score: ${args[0]}`);
     }
 }
