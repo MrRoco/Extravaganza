@@ -229,7 +229,7 @@ module.exports = (client, message) => {
 
         const channel = message.guild.channels.cache.get('705038712417026108');
         //const channel = client.channels.fetch(705038712417026108) as Discord.TextChannel;
-        var role = 'Group-1';
+        var role = 'Final-16';
         if(message.member.roles.cache.has('704757529241976908')) {
             role = 'Group-2';
         } else if (message.member.roles.cache.has('704757561328402432')) {
